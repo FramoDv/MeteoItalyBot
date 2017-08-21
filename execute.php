@@ -47,11 +47,12 @@
 		$response ="Eccoci $firstname!\r\n \xe2\x9c\x85 Per conoscere il meteo in tempo reale ti basta inviare il nome della tua città. Ad esempio: Roma.\r\n\n \xe2\x9c\x85 Per conoscere il meteo di domani invece dovrai inviarmi il nome della tua città seguito dalla parola domani. Ad esempio: Roma domani.\r\n\n \xe2\x9c\x85 In fine per conoscere il meteo per i successivi 3 giorni della tua città inviami il nome della città unito a 3 giorni. Esempio: Roma 3 giorni.\r\n\n \xe2\x9d\x97 PS: in caso di insicurezza sull' esattezza delle previsioni, aggiungere alla propria località la provincia oppure lo stato. Esempio: Amalfi Salerno oppure Amalfi Italia. Se dovessero persistere dubbi scrivi o clicca /alert.";
 	}
 
-	// caso richiesta d' aiuto
+	// caso richiesta visione avvertenze
 	elseif(strpos($text, '/alert') !== false){
 		$response ="Ciao $firstname!\r\n qui voglio metterti a conscenza di alcune anomalie che potresti riscontrare. A volte per paesini, per cosi dire di nicchia, potrebbero esserci delle deviazioni di temperatura, verso il basso, per un massimo di 7°C gradi. Questo perchè, i dati a cui attingo sono dati su scala mondiale, quindi non tutte le stazioni meteo saranno coperte, data la grande mole di stazioni presenti nel \xf0\x9f\x8c\x8d. Questo porta ad approssimare con dei calcoli, tra una stazione e l' altra, le temperature di una località non coperta. Pertanto $firstname se mai dovessi avere dubbi, il mio consiglio è controllare il meteo per un capoluogo o cittàdina a te vicina di maggior rilievo. Grazie per la comprensione.\xf0\x9f\x98\x98";
 	}
 
+	//caso voglia di votare
 	elseif(strpos($text, '/votami') !== false){
 		$response ="Salve $firstname!\r\n se per te sono stato anche un pochino utile, per supportarmi, se ti va potresti lasciare qualche \xe2\xad\x90\xef\xb8\x8f ed un bel commento qui: https://storebot.me/bot/meteoitalybot Grazie.\xf0\x9f\x98\x98";
 	}
