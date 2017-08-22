@@ -49,7 +49,7 @@
 
 	// caso richiesta visione avvertenze
 	elseif(strpos($text, '/alert') !== false){
-		$response ="Ciao $firstname!\r\n qui voglio metterti a conscenza di alcune anomalie che potresti riscontrare. A volte per paesini, per cosi dire di nicchia, potrebbero esserci delle deviazioni di temperatura, verso il basso, per un massimo di 7°C gradi. Questo perchè, i dati a cui attingo sono dati su scala mondiale, quindi non tutte le stazioni meteo saranno coperte, data la grande mole di stazioni presenti nel \xf0\x9f\x8c\x8d. Questo porta ad approssimare con dei calcoli, tra una stazione e l' altra, le temperature di una località non coperta. Pertanto $firstname se mai dovessi avere dubbi, il mio consiglio è controllare il meteo per un capoluogo o cittàdina a te vicina di maggior rilievo. Grazie per la comprensione.\xf0\x9f\x98\x98";
+		$response ="Ciao $firstname!\r\n qui voglio metterti a conscenza di alcune anomalie che potresti riscontrare. A volte per paesini per cosi dire più 'nascosti' potrebbero esserci delle variazioni di temperatura, verso il basso per un massimo di 7°C gradi. Questo perchè, i dati a cui attingo sono dati su scala mondiale, quindi non tutte le stazioni meteo sono coperte data la grande mole delle medesime presenti nel 🌍. Questo porta ad approssimare con dei calcoli tra una stazione e l' altra le temperature di una località non coperta. Pertanto $firstname se mai dovessi avere dubbi, il mio consiglio è controllare il meteo riferendosi ad un capoluogo o cittàdina a te vicina di maggior rilievo. Grazie per la comprensione.😁";
 	}
 
 	//caso voglia di votare
