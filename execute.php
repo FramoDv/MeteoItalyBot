@@ -1,5 +1,8 @@
 <?php
 
+/* 
+ Meteoitaly from Francesco Monti
+ */
 	$content = file_get_contents("php://input");
 	$update = json_decode($content, true);
 
@@ -29,8 +32,9 @@
 	$nubiSparse = "\xe2\x9b\x85"; //nubi
 	$neve = "\xe2\x9d\x84"; //neve
 	$coperto = "\xe2\x98\x81\xef\xb8\x8f"; //coperto
-	$foschia = "\xf0\x9f\x8c\xab"; //foschia
-	$acquazzone = "\xf0\x9f\x8c\xa7"; //acquazzone
+	$foschia = "🌫"; //foschia
+	$acquazzone = "⛈"; //acquazzone
+
 
 	// caso saluto iniziale o comando start
 	if(strpos($text, "/start") === 0 || $text=="ciao"){
@@ -317,8 +321,143 @@
 		    $response = "La condizione meteo attuale a \xf0\x9f\x93\x8d $apiCity è:\r\n $condition $descrizione\r\n \xf0\x9f\x8c\xa1 temperatura di: $temperatura °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid %";
 		}
 
-	 }//fine if principale
+	 //meteo orario per la giornata di domani
+	 }elseif(strpos($text, 'orario') == true){
+		$text = str_replace('orario', '', $text); 
+		$text = str_replace('domani', '', $text); // toglie la parola domani
+		$text = str_replace('.', '', $text); // toglie il punto
+		$text = trim($text);
+		$city = $text;
+		$richiestaMeteo = "http://api.openweathermap.org/data/2.5/forecast?APPID=25fc1c956e6e9a25ab68fcb3b7606a73&q=$city&lang=it&units=metric";
+	    $rispostaMeteo  = file_get_contents($richiestaMeteo);
+	    $jsonobj  = json_decode($rispostaMeteo,true);
+
+	    if(empty($jsonobj)){
+			$response = "Per favore, invia un messaggio di testo o un nome di città quantomeno simile ad una esistente nel \xf0\x9f\x8c\x8d. Grazie\xf0\x9f\x98\x98";
+		}
+		else{
+			$forecast= array();
+			$i;//inizio per scorrere bene dalla mezzanotte di domani i dati
+            $fin;//fine 
+               
+            $ora = $jsonobj['list'][0]['dt'];
+            $ora = gmdate("H:i:s", $ora);
+                
+            switch ($ora) {
+                case "00:00:00":
+                case "01:00:00":
+                case "02:00:00":
+                    $i = 8; $fin = 17;
+                 	break;
+                case "03:00:00":
+                case "04:00:00":
+                case "05:00:00":
+                    $i = 7; $fin = 16;
+                    break;
+               	case "06:00:00":
+                case "07:00:00":
+               	case "08:00:00":
+                        $i = 6; $fin = 15;
+                        break;
+                    case "09:00:00":
+                    case "10:00:00":
+                    case "11:00:00":
+                        $i = 5; $fin = 14;
+                        break;
+                    case "12:00:00":
+                    case "13:00:00":
+                    case "14:00:00":
+                        $i = 4; $fin = 13;
+                        break;
+                    case "15:00:00":
+                    case "16:00:00":
+                    case "17:00:00":
+                        $i = 3; $fin = 12;
+                        break;
+                    case "18:00:00":
+                    case "19:00:00":
+                    case "20:00:00":
+                        $i = 2; $fin = 11;
+                        break;
+                    case "21:00:00":
+                    case "22:00:00":
+                    case "23:00:00":
+                        $i = 1; $fin = 10;
+                        break;
+                }
+                
+                for($x = $i ; $x < $fin ; $x++ ){
+                   
+                    $descrizione = $jsonobj['list'][$x]['weather'][0]['description'];
+		    		$temperatura = intval((int)$jsonobj['list'][$x]['main']['temp']);
+		    		$vento = intval((((int)$jsonobj['list'][$x]['wind']['speed']) * 3.6));
+                    $condition ="";
+                    
+				    //switch case per le condizioni meteo con giusta emoji
+				    switch ($descrizione) {
+			    		case(strpos($descrizione, 'sereno') == true) :
+			        		$condition = $sole;
+			        	break;
+			    		case(strpos($descrizione, 'sparse') == true) :
+			        		$condition = $nubiSparse;
+			        	break;
+			        	case(strpos($descrizione, 'nuvole') == true) :
+			        		$condition = $pocheNuvole;
+			        	break;
+			        	case(strpos($descrizione, 'leggera') == true) :
+			        		$condition = $pioggiaLeggera;
+			        	break;
+			        	case(strpos($descrizione, 'moderata') == true) :
+			        		$condition = $pioggiaModerata;
+			        	break;
+			        	case(strpos($descrizione, 'neve') == true) :
+			        		$condition = $neve;
+			        	break;
+			        	case(strpos($descrizione, 'coperto') == true) :
+			        		$condition = $coperto;
+			        	break;
+			        	case(strpos($descrizione, 'foschia') == true) :
+			        		$condition = $foschia;
+			        	break;
+			        	case(strpos($descrizione, 'acquazzone') == true) :
+			        		$condition = $acquazzone;
+			        	break;
+					}    
+                   
+                    $forecast[$x] = "$condition $descrizione $temperatura °C gradi $vento km/h";
+                }
+                
+                $response = "La condizione meteo oraria domani a \xf0\x9f\x93\x8d $city sarà:\r\n"
+                	. "00:00 --". $forecast[$i]."\r\n,"
+                    . "01:00 -- ". $forecast[$i]."\r\n,"
+                    . "02:00 -- ". $forecast[$i]."\r\n,"
+                    . "03:00 -- ". $forecast[$i+1]."\r\n,"
+                    . "04:00 -- ". $forecast[$i+1]."\r\n,"
+                    . "05:00 -- ". $forecast[$i+1]."\r\n,"
+                    . "06:00 -- ". $forecast[$i+2]."\r\n"
+                    . "07:00 -- ". $forecast[$i+2]."\r\n,"
+                    . "08:00 -- ". $forecast[$i+2]."]\r\n,"
+                    . "09:00 -- ". $forecast[$i+3]."\r\n,"
+                    . "10:00 -- ". $forecast[$i+3]."\r\n,"
+                    . "11:00 -- ". $forecast[$i+3]."\r\n,"
+                    . "12:00 -- ". $forecast[$i+4]."\r\n,"
+                    . "13:00 -- ". $forecast[$i+4]."\r\n,"
+                    . "14:00 -- ". $forecast[$i+4]."\r\n,"
+                    . "15:00 -- ". $forecast[$i+5]."\r\n"
+                    . "16:00 -- ". $forecast[$i+5]."\r\n,"
+                    . "17:00 -- ". $forecast[$i+5]."\r\n,"
+                    . "18:00 -- ". $forecast[$i+6]."\r\n,"
+                    . "19:00 -- ". $forecast[$i+6]."\r\n,"
+                    . "20:00 -- ". $forecast[$i+6]."\r\n,"
+                    . "21:00 -- ". $forecast[$i+7]."\r\n,"
+                    . "22:00 -- ". $forecast[$i+7]."\r\n,"
+                    . "23:00 -- ". $forecast[$i+7]."\r\n,"
+                    . "24:00 -- ". $forecast[$i+8]."\r\n";
+		    //$response = "La condizione meteo oraria domani a \xf0\x9f\x93\x8d $city sarà:\r\n $condition $descrizione\r\n \xf0\x9f\x8c\xa1 temperatura di: $temperatura °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid %"
+	 }
+
 	
 	$parameters = array('chat_id' => $chatId, "text" => $response);
 	$parameters["method"] = "sendMessage"; //invio messaggio dopo specifica parametri
 	echo json_encode($parameters); // codifica messaggio in json
+}
