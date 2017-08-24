@@ -1,8 +1,12 @@
 <?php
 
 /* 
- Meteoitaly from Francesco Monti
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+
+
 	$content = file_get_contents("php://input");
 	$update = json_decode($content, true);
 
@@ -22,7 +26,7 @@
 	$text = strtolower($text);
 	$response = '';
 	$city = '';
-    header("Content-Type: application/json");
+        header("Content-Type: application/json");
 
 	//variabili per emoji condizioni meteo;
 	$sole = "\xe2\x98\x80\xef\xb8\x8f"; //sereno
@@ -322,7 +326,9 @@
 		}
 
 	 //meteo orario per la giornata di domani
-	 }elseif(strpos($text, 'orario') == true){
+	 
+	 }
+	 /*elseif(strpos($text, 'orario') !== false){
 		$text = str_replace('orario', '', $text); 
 		$text = str_replace('domani', '', $text); // toglie la parola domani
 		$text = str_replace('.', '', $text); // toglie il punto
@@ -333,12 +339,12 @@
 	    $jsonobj  = json_decode($rispostaMeteo,true);
 
 	    if(empty($jsonobj)){
-			$response = "Per favore, invia un messaggio di testo o un nome di città quantomeno simile ad una esistente nel \xf0\x9f\x8c\x8d. Grazie\xf0\x9f\x98\x98";
+                $response = "Per favore, invia un messaggio di testo o un nome di città quantomeno simile ad una esistente nel \xf0\x9f\x8c\x8d. Grazie\xf0\x9f\x98\x98";
 		}
 		else{
-			$forecast= array();
-			$i;//inizio per scorrere bene dalla mezzanotte di domani i dati
-            $fin;//fine 
+	            $forecast= array();
+                    $i;//inizio per scorrere bene dalla mezzanotte di domani i dati
+                    $fin;//fine 
                
             $ora = $jsonobj['list'][0]['dt'];
             $ora = gmdate("H:i:s", $ora);
@@ -455,6 +461,7 @@
                     . "24:00 -- ". $forecast[$i+8]."\r\n";
 		    //$response = "La condizione meteo oraria domani a \xf0\x9f\x93\x8d $city sarà:\r\n $condition $descrizione\r\n \xf0\x9f\x8c\xa1 temperatura di: $temperatura °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid %"
 	 }
+	 */
 
 	
 	$parameters = array('chat_id' => $chatId, "text" => $response);
