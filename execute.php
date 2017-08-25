@@ -66,6 +66,7 @@
 		$text = str_replace('.', '', $text); // toglie il punto
 		$text = trim($text);
 		$city = $text;
+		$city = ucfirst($city);
 		$richiestaMeteo = "http://api.openweathermap.org/data/2.5/forecast?APPID=25fc1c956e6e9a25ab68fcb3b7606a73&q=$city&lang=it&units=metric";
 	    $rispostaMeteo  = file_get_contents($richiestaMeteo);
 	    $jsonobj  = json_decode($rispostaMeteo,true);
@@ -162,7 +163,7 @@
 			        	break;
 					}    
                    
-                    $forecast[$x] = "$condition $descrizione 🌡$temperatura °C 🍃$vento km/h";
+                    $forecast[$x] = "$condition $descrizione 🌡$temperatura °C🍃$vento km/h";
                 }
                 
                 $response = "La condizione meteo oraria domani a \xf0\x9f\x93\x8d $city sarà:\r\n"
