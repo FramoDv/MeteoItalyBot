@@ -452,6 +452,8 @@
                     . "24:00 -- ". $forecast[$i+8]."\r\n";
 		    //$response = "La condizione meteo oraria domani a \xf0\x9f\x93\x8d $city sarà:\r\n $condition $descrizione\r\n \xf0\x9f\x8c\xa1 temperatura di: $temperatura °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid %"
 	 }
+         
+    }
 	
 	$parameters = array('chat_id' => $chatId, "text" => $response);
 	$parameters["method"] = "sendMessage"; //invio messaggio dopo specifica parametri
