@@ -319,9 +319,9 @@
 		}
 	 
 
-
+}
 	
 	$parameters = array('chat_id' => $chatId, "text" => $response);
 	$parameters["method"] = "sendMessage"; //invio messaggio dopo specifica parametri
 	echo json_encode($parameters); // codifica messaggio in json
-}
+
