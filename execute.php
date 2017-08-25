@@ -162,36 +162,35 @@
 			        	break;
 					}    
                    
-                    $forecast[$x] = "$condition $descrizione 🌡$temperatura°C 🍃$ventokm/h";
+                    $forecast[$x] = "$condition $descrizione 🌡 $temperatura°C 🍃 $vento km/h";
                 }
                 
                 $response = "La condizione meteo oraria domani a \xf0\x9f\x93\x8d $city sarà:\r\n"
                 	. "00:00 ". $forecast[$i]."\r\n"
-                    . "01:00  ". $forecast[$i]."\r\n"
-                    . "02:00  ". $forecast[$i]."\r\n"
-                    . "03:00  ". $forecast[$i+1]."\r\n"
-                    . "04:00  ". $forecast[$i+1]."\r\n"
-                    . "05:00  ". $forecast[$i+1]."\r\n"
-                    . "06:00  ". $forecast[$i+2]."\r\n"
-                    . "07:00  ". $forecast[$i+2]."\r\n"
-                    . "08:00  ". $forecast[$i+2]."\r\n"
-                    . "09:00  ". $forecast[$i+3]."\r\n"
-                    . "10:00  ". $forecast[$i+3]."\r\n"
-                    . "11:00  ". $forecast[$i+3]."\r\n"
-                    . "12:00  ". $forecast[$i+4]."\r\n"
-                    . "13:00  ". $forecast[$i+4]."\r\n"
-                    . "14:00  ". $forecast[$i+4]."\r\n"
-                    . "15:00  ". $forecast[$i+5]."\r\n"
-                    . "16:00  ". $forecast[$i+5]."\r\n"
-                    . "17:00  ". $forecast[$i+5]."\r\n"
-                    . "18:00  ". $forecast[$i+6]."\r\n"
-                    . "19:00  ". $forecast[$i+6]."\r\n"
-                    . "20:00  ". $forecast[$i+6]."\r\n"
-                    . "21:00  ". $forecast[$i+7]."\r\n"
-                    . "22:00  ". $forecast[$i+7]."\r\n"
-                    . "23:00  ". $forecast[$i+7]."\r\n"
-                    . "24:00  ". $forecast[$i+8]."\r\n";
-		    //$response = "La condizione meteo oraria domani a \xf0\x9f\x93\x8d $city sarà:\r\n $condition $descrizione\r\n \xf0\x9f\x8c\xa1 temperatura di: $temperatura °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid %"
+                    . "01:00 ". $forecast[$i]."\r\n"
+                    . "02:00 ". $forecast[$i]."\r\n"
+                    . "03:00 ". $forecast[$i+1]."\r\n"
+                    . "04:00 ". $forecast[$i+1]."\r\n"
+                    . "05:00 ". $forecast[$i+1]."\r\n"
+                    . "06:00 ". $forecast[$i+2]."\r\n"
+                    . "07:00 ". $forecast[$i+2]."\r\n"
+                    . "08:00 ". $forecast[$i+2]."\r\n"
+                    . "09:00 ". $forecast[$i+3]."\r\n"
+                    . "10:00 ". $forecast[$i+3]."\r\n"
+                    . "11:00 ". $forecast[$i+3]."\r\n"
+                    . "12:00 ". $forecast[$i+4]."\r\n"
+                    . "13:00 ". $forecast[$i+4]."\r\n"
+                    . "14:00 ". $forecast[$i+4]."\r\n"
+                    . "15:00 ". $forecast[$i+5]."\r\n"
+                    . "16:00 ". $forecast[$i+5]."\r\n"
+                    . "17:00 ". $forecast[$i+5]."\r\n"
+                    . "18:00 ". $forecast[$i+6]."\r\n"
+                    . "19:00 ". $forecast[$i+6]."\r\n"
+                    . "20:00 ". $forecast[$i+6]."\r\n"
+                    . "21:00 ". $forecast[$i+7]."\r\n"
+                    . "22:00 ". $forecast[$i+7]."\r\n"
+                    . "23:00 ". $forecast[$i+7]."\r\n"
+                    . "24:00 ". $forecast[$i+8]."\r\n";
             }
 	}
 	//caso città + parola domani quindi meteo domani
