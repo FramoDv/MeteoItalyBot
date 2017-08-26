@@ -96,11 +96,11 @@
                	case "06:00:00":
                 case "07:00:00":
                	case "08:00:00":
-                        $i = 6; $fin = 15;
-                        break;
-                    case "09:00:00":
-                    case "10:00:00":
-                    case "11:00:00":
+                   	$i = 6; $fin = 15;
+                    break;
+               	case "09:00:00":
+                case "10:00:00":
+               	case "11:00:00":
                         $i = 5; $fin = 14;
                         break;
                     case "12:00:00":
@@ -123,7 +123,7 @@
                     case "23:00:00":
                         $i = 1; $fin = 10;
                         break;
-                }
+               	}
                 
                 for($x = $i ; $x < $fin ; $x++ ){
                    
@@ -134,8 +134,8 @@
                     
 				    //switch case per le condizioni meteo con giusta emoji
 				    switch ($descrizione) {
-			    		case(strpos($descrizione, 'sereno') == true) 
-			        		if($x <= ($i +3) || $x >= ($fin -2){
+			    		case(strpos($descrizione, 'sereno') == true): 
+			        		if($x <= ($i +3) || $x >= ($fin-2)){
 			        			$condition = "🌙";
 			        		}else{
 			        			$condition = $sole;
