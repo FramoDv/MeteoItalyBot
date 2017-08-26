@@ -135,7 +135,7 @@
 				    //switch case per le condizioni meteo con giusta emoji
 				    switch ($descrizione) {
 			    		case(strpos($descrizione, 'sereno') == true): 
-			        		if($x <= ($i +3) || $x >= ($fin-2)){
+			        		if($x < ($i +3) || $x >= ($fin-2)){
 			        			$condition = "🌙";
 			        		}else{
 			        			$condition = $sole;
