@@ -134,8 +134,12 @@
                     
 				    //switch case per le condizioni meteo con giusta emoji
 				    switch ($descrizione) {
-			    		case(strpos($descrizione, 'sereno') == true) :
-			        		$condition = $sole;
+			    		case(strpos($descrizione, 'sereno') == true) 
+			        		if($x <= ($i +3) || $x >= ($fin -2){
+			        			$condition = "🌙";
+			        		}else{
+			        			$condition = $sole;
+			        		}
 			        	break;
 			    		case(strpos($descrizione, 'sparse') == true) :
 			        		$condition = $nubiSparse;
@@ -178,7 +182,7 @@
                     . "08:00 ". $forecast[$i+2]."\r\n"
                     . "09:00 ". $forecast[$i+3]."\r\n"
                     . "10:00 ". $forecast[$i+3]."\r\n"
-                    . "11:00". $forecast[$i+3]."\r\n"
+                    . "11:00 ". $forecast[$i+3]."\r\n"
                     . "12:00 ". $forecast[$i+4]."\r\n"
                     . "13:00 ". $forecast[$i+4]."\r\n"
                     . "14:00 ". $forecast[$i+4]."\r\n"
