@@ -45,7 +45,7 @@
 
 	// caso richiesta d' aiuto
 	elseif(strpos($text, '/help') !== false){
-		$response ="Eccoci $firstname!\r\n \xe2\x9c\x85 Per conoscere il meteo in tempo reale ti basta inviare il nome della tua città. Ad esempio: Roma.\r\n\n \xe2\x9c\x85 Per conoscere il meteo di domani invece dovrai: Roma domani.\r\n\n \xe2\x9c\x85 Per conoscere il meteo di domani ora per ora inviami: Roma domani orario, oppure, Roma orario\xe2\x9c\x85 In fine per conoscere il meteo per i successivi 3 giorni della tua città inviami: Roma 3 giorni.\r\n\n \xe2\x9d\x97 PS: in caso di insicurezza sull' esattezza delle previsioni, aggiungere alla propria località la provincia oppure lo stato. Esempio: Amalfi Salerno oppure Amalfi Italia. Se dovessero persistere dubbi scrivi o clicca /alert.";
+		$response ="Eccoci $firstname!\r\n \xe2\x9c\x85 Per conoscere il meteo in tempo reale ti basta inviare il nome della tua città. Ad esempio: Roma.\r\n\n \xe2\x9c\x85 Per conoscere il meteo di domani invece dovrai: Roma domani.\r\n\n \xe2\x9c\x85 Per conoscere il meteo di domani ora per ora inviami: Roma domani orario, oppure, Roma orario \r\n\n\xe2\x9c\x85 In fine per conoscere il meteo per i successivi 3 giorni della tua città inviami: Roma 3 giorni.\r\n\n \xe2\x9d\x97 PS: in caso di insicurezza sull' esattezza delle previsioni, aggiungere alla propria località la provincia oppure lo stato. Esempio: Amalfi Salerno oppure Amalfi Italia. Se dovessero persistere dubbi scrivi o clicca /alert.";
 	}
 
 	// caso richiesta visione avvertenze
