@@ -26,7 +26,7 @@
 	$pioggiaLeggera = "\xe2\x98\x94\xef\xb8\x8f"; //pioggia leggera 
 	$pioggiaModerata = "\xe2\x98\x94\xef\xb8\x8f"; //pioggia moderata
 	$pocheNuvole = "\xf0\x9f\x8c\xa4"; //nuvole
-	$nubiSparse = "\xe2\x9b\x85"; //nubi
+	$nubiSparse = "⛅"; //nubi
 	$neve = "\xe2\x9d\x84"; //neve
 	$coperto = "\xe2\x98\x81\xef\xb8\x8f"; //coperto
 	$foschia = "🌫"; //foschia
@@ -45,7 +45,7 @@
 
 	// caso richiesta d' aiuto
 	elseif(strpos($text, '/help') !== false){
-		$response ="Eccoci $firstname!\r\n \xe2\x9c\x85 Per conoscere il meteo in tempo reale ti basta inviare il nome della tua città. Ad esempio: Roma.\r\n\n \xe2\x9c\x85 Per conoscere il meteo di domani invece dovrai: Roma domani.\r\n\n \xe2\x9c\x85 Per conoscere il meteo di domani ora per ora inviami: Roma domani orario, oppure, Roma orario \r\n\n\xe2\x9c\x85 In fine per conoscere il meteo per i successivi 3 giorni della tua città inviami: Roma 3 giorni.\r\n\n \xe2\x9d\x97 PS: in caso di insicurezza sull' esattezza delle previsioni, aggiungere alla propria località la provincia oppure lo stato. Esempio: Amalfi Salerno oppure Amalfi Italia. Se dovessero persistere dubbi scrivi o clicca /alert.";
+		$response ="Eccoci $firstname!\r\n \xe2\x9c\x85 Per conoscere il meteo in tempo reale ti basta inviare il nome della tua città. Ad esempio: Roma.\r\n\n \xe2\x9c\x85 Per conoscere il meteo di domani invece dovrai digitare: Roma domani.\r\n\n \xe2\x9c\x85 Per conoscere il meteo di domani ora per ora inviami: Roma domani orario, oppure, Roma orario \r\n\n\xe2\x9c\x85 In fine per conoscere il meteo per i successivi 3 giorni della tua città inviami: Roma 3 giorni.\r\n\n \xe2\x9d\x97 PS: in caso di insicurezza sull' esattezza delle previsioni, aggiungere alla propria località la provincia oppure lo stato. Esempio: Amalfi Salerno oppure Amalfi Italia. Se dovessero persistere dubbi scrivi o clicca /alert.";
 	}
 
 	// caso richiesta visione avvertenze
@@ -101,74 +101,74 @@
                	case "09:00:00":
                 case "10:00:00":
                	case "11:00:00":
-                        $i = 5; $fin = 14;
-                        break;
-                    case "12:00:00":
-                    case "13:00:00":
-                    case "14:00:00":
-                        $i = 4; $fin = 13;
-                        break;
-                    case "15:00:00":
-                    case "16:00:00":
-                    case "17:00:00":
-                        $i = 3; $fin = 12;
-                        break;
-                    case "18:00:00":
-                    case "19:00:00":
-                    case "20:00:00":
-                        $i = 2; $fin = 11;
-                        break;
-                    case "21:00:00":
-                    case "22:00:00":
-                    case "23:00:00":
-                        $i = 1; $fin = 10;
-                        break;
-               	}
+                     $i = 5; $fin = 14;
+                    break;
+                case "12:00:00":
+                case "13:00:00":
+               	case "14:00:00":
+                    $i = 4; $fin = 13;
+                 	break;
+                case "15:00:00":
+               	case "16:00:00":
+                case "17:00:00":
+                    $i = 3; $fin = 12;
+                    break;
+                case "18:00:00":
+                case "19:00:00":
+                case "20:00:00":
+                    $i = 2; $fin = 11;
+                	break;
+                case "21:00:00":
+                case "22:00:00":
+                case "23:00:00":
+                    $i = 1; $fin = 10;
+                    break;
+            }
                 
-                for($x = $i ; $x < $fin ; $x++ ){
-                   
-                    $descrizione = $jsonobj['list'][$x]['weather'][0]['description'];
-		    		$temperatura = intval((int)$jsonobj['list'][$x]['main']['temp']);
-		    		$vento = intval((((int)$jsonobj['list'][$x]['wind']['speed']) * 3.6));
-                    $condition ="";
-                    
-				    //switch case per le condizioni meteo con giusta emoji
-				    switch ($descrizione) {
-			    		case(strpos($descrizione, 'sereno') == true): 
-			        		if($x < ($i +2) || $x >= ($fin-2)){
-			        			$condition = "🌙";
-			        		}else{
-			        			$condition = $sole;
-			        		}
-			        	break;
-			    		case(strpos($descrizione, 'sparse') == true) :
-			        		$condition = $nubiSparse;
-			        	break;
-			        	case(strpos($descrizione, 'nuvole') == true) :
-			        		$condition = $pocheNuvole;
-			        	break;
-			        	case(strpos($descrizione, 'leggera') == true) :
-			        		$condition = $pioggiaLeggera;
-			        	break;
-			        	case(strpos($descrizione, 'moderata') == true) :
-			        		$condition = $pioggiaModerata;
-			        	break;
-			        	case(strpos($descrizione, 'neve') == true) :
-			        		$condition = $neve;
-			        	break;
-			        	case(strpos($descrizione, 'coperto') == true) :
-			        		$condition = $coperto;
-			        	break;
-			        	case(strpos($descrizione, 'foschia') == true) :
-			        		$condition = $foschia;
-			        	break;
-			        	case(strpos($descrizione, 'acquazzone') == true) :
-			        		$condition = $acquazzone;
-			        	break;
-					}    
-                   
-                    $forecast[$x] = "$condition $descrizione\r\n🌡$temperatura °C🍃$vento km/h";
-                }
+            for($x = $i ; $x < $fin ; $x++ ){
+               
+                $descrizione = $jsonobj['list'][$x]['weather'][0]['description'];
+	    		$temperatura = intval((int)$jsonobj['list'][$x]['main']['temp']);
+	    		$vento = intval((((int)$jsonobj['list'][$x]['wind']['speed']) * 3.6));
+                $condition ="";
+                
+			    //switch case per le condizioni meteo con giusta emoji
+			    switch ($descrizione) {
+		    		case(strpos($descrizione, 'sereno') == true): 
+		        		if($x < ($i +2) || $x >= ($fin-2)){
+		        			$condition = "🌙";
+		        		}else{
+		        			$condition = $sole;
+		        		}
+		        	break;
+		    		case(strpos($descrizione, 'sparse') == true) :
+		        		$condition = $nubiSparse;
+		        	break;
+		        	case(strpos($descrizione, 'nuvole') == true) :
+		        		$condition = $pocheNuvole;
+		        	break;
+		        	case(strpos($descrizione, 'leggera') == true) :
+		        		$condition = $pioggiaLeggera;
+		        	break;
+		        	case(strpos($descrizione, 'moderata') == true) :
+		        		$condition = $pioggiaModerata;
+		        	break;
+		        	case(strpos($descrizione, 'neve') == true) :
+		        		$condition = $neve;
+		        	break;
+		        	case(strpos($descrizione, 'coperto') == true) :
+		        		$condition = $coperto;
+		        	break;
+		        	case(strpos($descrizione, 'foschia') == true) :
+		        		$condition = $foschia;
+		        	break;
+		        	case(strpos($descrizione, 'acquazzone') == true) :
+		        		$condition = $acquazzone;
+		        	break;
+				}    
+               
+                $forecast[$x] = "$condition $descrizione\r\n🌡$temperatura °C🍃$vento km/h";
+            }
                 
                 $response = "La condizione meteo oraria domani a \xf0\x9f\x93\x8d $city sarà:\r\n"
                 	. "00:00 ". $forecast[$i]."\r\n"
@@ -196,8 +196,9 @@
                     . "22:00 ". $forecast[$i+7]."\r\n"
                     . "23:00 ". $forecast[$i+7]."\r\n"
                     . "24:00 ". $forecast[$i+8]."\r\n";
-            }
+        }
 	}
+	
 	//caso città + parola domani quindi meteo domani
 	elseif(strpos($text, 'domani') !== false){
 		$text = str_replace('domani', '', $text); // toglie la parola domani
