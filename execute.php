@@ -165,6 +165,9 @@
 		        	case(strpos($descrizione, 'acquazzone') == true) :
 		        		$condition = $acquazzone;
 		        	break;
+		        	case(strpos($descrizione, 'forte pioggia') == true) :
+		        		$condition = $acquazzone;
+		        	break;
 				}    
                
                 $forecast[$x] = "$condition $descrizione\r\n🌡$temperatura °C🍃$vento km/h";
@@ -256,6 +259,9 @@
 	        	case(strpos($descrizione, 'acquazzone') == true) :
 	        		$condition = $acquazzone;
 	        	break;
+	        	case(strpos($descrizione, 'forte pioggia') == true) :
+	        		$condition = $acquazzone;
+	        	break;
 			}
 
 		    $response = "Domani a \xf0\x9f\x93\x8d $apiCity il meteo dice:\r\n $condition $descrizione\r\n \xf0\x9f\x8c\xa1 temperatura max: $temperaturaMax °C gradi\r\n \xf0\x9f\x8c\xa1 temperatura min: $temperaturaMin °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid %";
@@ -315,6 +321,9 @@
 	        	case(strpos($descrizione, 'acquazzone') == true) :
 	        		$condition = $acquazzone;
 	        	break;
+	        	case(strpos($descrizione1, 'forte pioggia') == true) :
+	        		$condition = $acquazzone;
+	        	break;
 
             }
             
@@ -357,6 +366,9 @@
 	        	case(strpos($descrizione1, 'acquazzone') == true) :
 	        		$condition1 = $acquazzone;
 	        	break;
+	        	case(strpos($descrizione1, 'forte pioggia') == true) :
+	        		$condition1 = $acquazzone;
+	        	break;
             }
             
             //dopodomani +1
@@ -397,6 +409,9 @@
 	        		$condition2 = $foschia;
 	        	break;
 	        	case(strpos($descrizione2, 'acquazzone') == true) :
+	        		$condition2 = $acquazzone;
+	        	break;
+	        	case(strpos($descrizione1, 'forte pioggia') == true) :
 	        		$condition2 = $acquazzone;
 	        	break;
             }
@@ -452,6 +467,9 @@
 	        		$condition = $foschia;
 	        	break;
 	        	case(strpos($descrizione, 'acquazzone') == true) :
+	        		$condition = $acquazzone;
+	        	break;
+	        	case(strpos($descrizione1, 'forte pioggia') == true) :
 	        		$condition = $acquazzone;
 	        	break;
 			}
