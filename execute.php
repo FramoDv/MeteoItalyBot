@@ -31,7 +31,7 @@
 	$neve = "\xe2\x9d\x84"; //neve
 	$coperto = "\xe2\x98\x81\xef\xb8\x8f"; //coperto
 	$foschia = "\xF0\x9F\x8C\x81"; //foschia
-	$acquazzone = "\xe2\x98\x94\xef\xb8\x8f"; //acquazzone
+	//$acquazzone = "\xe2\x98\x94\xef\xb8\x8f"; //acquazzone
 
 
 	// caso saluto iniziale o comando start
@@ -258,11 +258,11 @@
 	        		$condition = $foschia;
 	        	break;
 	        	case(strpos($descrizione, 'acquazzone') == true) :
-	        		$condition = $acquazzone;
-	        	break;
-	        	case(strpos($descrizione, 'forte pioggia') == true) :
-	        		$condition = $acquazzone;
-	        	break;
+		        		$condition = $pioggiaModerata;
+		        	break;
+		        case(strpos($descrizione, 'forte pioggia') == true) :
+		        		$condition = $pioggiaModerata;
+		        	break;
 			}
 
 		    $response = "Domani a \xf0\x9f\x93\x8d $apiCity il meteo dice:\r\n $condition $descrizione\r\n \xf0\x9f\x8c\xa1 temperatura max: $temperaturaMax °C gradi\r\n \xf0\x9f\x8c\xa1 temperatura min: $temperaturaMin °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid %";
@@ -320,11 +320,11 @@
 	        		$condition = $foschia;
 	        	break;
 	        	case(strpos($descrizione, 'acquazzone') == true) :
-	        		$condition = $acquazzone;
-	        	break;
-	        	case(strpos($descrizione1, 'forte pioggia') == true) :
-	        		$condition = $acquazzone;
-	        	break;
+		        		$condition = $pioggiaModerata;
+		        	break;
+		        case(strpos($descrizione, 'forte pioggia') == true) :
+		        		$condition = $pioggiaModerata;
+		        	break;
 
             }
             
@@ -364,12 +364,12 @@
                 case(strpos($descrizione1, 'foschia') == true) :
 	        		$condition1 = $foschia;
 	        	break;
-	        	case(strpos($descrizione1, 'acquazzone') == true) :
-	        		$condition1 = $acquazzone;
-	        	break;
-	        	case(strpos($descrizione1, 'forte pioggia') == true) :
-	        		$condition1 = $acquazzone;
-	        	break;
+	        	case(strpos($descrizione, 'acquazzone') == true) :
+		        		$condition1 = $pioggiaModerata;
+		        	break;
+		        case(strpos($descrizione, 'forte pioggia') == true) :
+		        		$condition1 = $pioggiaModerata;
+		        	break;
             }
             
             //dopodomani +1
@@ -409,12 +409,12 @@
                 case(strpos($descrizione2, 'foschia') == true) :
 	        		$condition2 = $foschia;
 	        	break;
-	        	case(strpos($descrizione2, 'acquazzone') == true) :
-	        		$condition2 = $acquazzone;
-	        	break;
-	        	case(strpos($descrizione1, 'forte pioggia') == true) :
-	        		$condition2 = $acquazzone;
-	        	break;
+	        	case(strpos($descrizione, 'acquazzone') == true) :
+		        		$condition2 = $pioggiaModerata;
+		        	break;
+		        case(strpos($descrizione, 'forte pioggia') == true) :
+		        		$condition2 = $pioggiaModerata;
+		        	break;
             }
         }
             $response = "Domani a \xf0\x9f\x93\x8d $apiCity il meteo dice:\r\n $condition $descrizione\r\n \xf0\x9f\x8c\xa1 temperatura max: $temperaturaMax °C gradi\r\n \xf0\x9f\x8c\xa1 temperatura min: $temperaturaMin °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid %\r\n\r\nIl $data1 a \xf0\x9f\x93\x8d $apiCity il meteo dice:\r\n $condition1 $descrizione1\r\n \xf0\x9f\x8c\xa1 temperatura max: $temperaturaMax1 °C gradi\r\n \xf0\x9f\x8c\xa1 temperatura min: $temperaturaMin1 °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento1 km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid1 %\r\n\r\nIl $data2 a \xf0\x9f\x93\x8d $apiCity il meteo dice:\r\n $condition2 $descrizione2\r\n \xf0\x9f\x8c\xa1 temperatura max: $temperaturaMax2 °C gradi\r\n \xf0\x9f\x8c\xa1 temperatura min di: $temperaturaMin2 °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento2 km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid2 %";
@@ -468,11 +468,11 @@
 	        		$condition = $foschia;
 	        	break;
 	        	case(strpos($descrizione, 'acquazzone') == true) :
-	        		$condition = $pioggiaModerata;
-	        	break;
-	        	case(strpos($descrizione1, 'forte pioggia') == true) :
-	        		$condition = $pioggiaModerata;
-	        	break;
+		        		$condition = $pioggiaModerata;
+		        	break;
+		        case(strpos($descrizione, 'forte pioggia') == true) :
+		        		$condition = $pioggiaModerata;
+		        	break;
 			}
 
 		    $response = "La condizione meteo attuale a \xf0\x9f\x93\x8d $apiCity è:\r\n $condition $descrizione\r\n \xf0\x9f\x8c\xa1 temperatura di: $temperatura °C gradi\r\n \xf0\x9f\x8d\x83 vento a: $vento km/h\r\n \xf0\x9f\x92\xa6 umidità: $umid %";
