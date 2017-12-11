@@ -30,7 +30,7 @@
 	$neve = "\xe2\x9d\x84"; //neve
 	$coperto = "\xe2\x98\x81\xef\xb8\x8f"; //coperto
 	$foschia = "\xF0\x9F\x8C\x81"; //foschia
-	$acquazzone = "\xe2\x9b\x88"; //acquazzone
+	$acquazzone = "\xe2\x98\x94\xef\xb8\x8f"; //acquazzone
 
 
 	// caso saluto iniziale o comando start
