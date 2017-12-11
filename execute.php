@@ -171,7 +171,7 @@
 		        	break;
 				}    
                
-                $forecast[$x] = "$condition $descrizione\r\n🌡$temperatura °C🍃$vento km/h";
+                $forecast[$x] = "$condition $descrizione\r\n🌡$temperatura °C - 🍃$vento km/h";
             }
                 
                 $response = "La condizione meteo oraria domani a \xf0\x9f\x93\x8d $city sarà:\r\n"
