@@ -1,3 +1,4 @@
+
 <?php
 
 	$content = file_get_contents("php://input");
@@ -160,13 +161,13 @@
 		        		$condition = $coperto;
 		        	break;
 		        	case(strpos($descrizione, 'foschia') == true) :
-		        		$condition = $foschia;
+		        		$condition = $pioggiaModerata;
 		        	break;
 		        	case(strpos($descrizione, 'acquazzone') == true) :
-		        		$condition = $acquazzone;
+		        		$condition = $pioggiaModerata;
 		        	break;
 		        	case(strpos($descrizione, 'forte pioggia') == true) :
-		        		$condition = $acquazzone;
+		        		$condition = $pioggiaModerata;
 		        	break;
 				}    
                
@@ -467,10 +468,10 @@
 	        		$condition = $foschia;
 	        	break;
 	        	case(strpos($descrizione, 'acquazzone') == true) :
-	        		$condition = $acquazzone;
+	        		$condition = $pioggiaModerata;
 	        	break;
 	        	case(strpos($descrizione1, 'forte pioggia') == true) :
-	        		$condition = $acquazzone;
+	        		$condition = $pioggiaModerata;
 	        	break;
 			}
 
