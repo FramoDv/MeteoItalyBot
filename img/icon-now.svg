@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="53px" viewBox="0 0 52 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>now-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-171.000000, -975.000000)">
+        <g id="first-function" transform="translate(0.000000, 832.000000)">
+            <g id="now-icon" transform="translate(173.000000, 143.000000)">
+                <circle id="Oval" stroke="#2D9DFF" stroke-width="4" cx="22.5" cy="28.5" r="22.5"></circle>
+                <rect id="Rectangle-8" fill="#2C9EFF" x="20" y="10" width="2" height="21" rx="1"></rect>
+                <rect id="Rectangle-8" fill="#2C9EFF" transform="translate(30.000000, 30.000000) rotate(90.000000) translate(-30.000000, -30.000000) " x="29" y="20" width="2" height="20" rx="1"></rect>
+                <rect id="Rectangle-6" fill="#2D9DFF" x="12" y="0" width="20" height="4" rx="1"></rect>
+                <path d="M44.9239713,15.9857748 L46.8496782,15.9857748 C47.9542477,15.9857748 48.8496782,16.8812053 48.8496782,17.9857748 L48.8496782,19.6720773 C48.8496782,20.7766468 47.9542477,21.6720773 46.8496782,21.6720773 L42.9239713,21.6720773 L42.9239713,17.9857748 C42.9239713,16.8812053 43.8194018,15.9857748 44.9239713,15.9857748 Z" id="Rectangle-7" fill="#2D9DFF" transform="translate(45.886825, 18.828926) rotate(25.000000) translate(-45.886825, -18.828926) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="57px" viewBox="0 0 50 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>tomorrow.icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-781.000000, -1640.000000)">
+        <g id="second-function" transform="translate(0.000000, 1532.000000)">
+            <g id="tomorrow.icon" transform="translate(781.000000, 108.000000)">
+                <path d="M17,10 L22,10 L22,2.49777572 L19.5967966,2.00995117 C19.8322874,2.05775329 20,2.26066342 20,2.5 C20,2.77614237 19.7761424,3 19.5,3 C19.2238576,3 19,2.77614237 19,2.5 C19,2.26066342 19.1677126,2.05775329 19.4032034,2.00995117 L17,2.49777572 L17,10 Z M25.2076174,4 L30,4 L30,7 L27,7 L27,4.94999094 L30,4.94999094 L29.4032034,7.89003071 C27.3579408,7.47486431 25.7588511,5.94635313 25.2076174,4 Z M35.7923826,4 C35.2411489,5.94635313 33.6420592,7.47486431 31.5967966,7.89003071 L31,4.94999094 L34,4.94999094 L34,7 L31,7 L31,4 L35.7923826,4 Z" id="Combined-Shape" stroke="#FCFCFC" stroke-width="6"></path>
+                <polygon id="1" fill="#FCFCFC" points="30.0698152 45 25.5975359 45 25.5975359 24.1964408 19 26.3675565 19 22.7193703 29.4969199 19 30.0698152 19"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

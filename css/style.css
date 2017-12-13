@@ -1,0 +1,149 @@
+h1{
+    font-size:  60px;
+    margin-bottom: 25px;
+}
+
+h2{
+    font-size: 50px;
+}
+
+h1,h2{
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.light,h1,h2{
+    font-family: 'Roboto', sans-serif;
+}
+
+.light{
+    font-weight: 100;
+}
+
+#top-section{
+    height:777px;
+    width:100%;
+    background-color: #2D9DFF;
+    color:#fcfcfc;
+    overflow: hidden;
+}
+
+#add-to{
+    height: 50px;
+    color: #fcfcfc;
+    font-size: 20px;
+    font-weight: 800;
+    border: 4px solid #fcfcfc;
+    border-radius: 4px;
+}
+
+.blue,.white{
+    height:685px;
+    width:100%;
+    overflow: hidden;
+}
+
+.blue{
+    background-color: #2D9DFF;
+    color:#fcfcfc;
+}
+
+.white{
+    color: #2D9DFF;
+    background-color:#fcfcfc;
+}
+
+
+#top-section .description, #top-section .phone,.white .description, .white .phone,.blue .description, .blue .phone{
+    margin-top: 80px;
+}
+
+#top-section .phone img, .white .phone img,.blue .phone img{
+    margin-left: 50px;
+}
+
+footer{
+    height: 250px;
+    background-color: #fcfcfc;
+    text-align: center;
+}
+
+p{
+    margin:0 auto;
+    padding-top: 105px;
+    color: #2D9DFF;
+    font-size: 20px;
+}
+
+/* medias tablet*/
+@media only screen and (max-width: 768px){
+    h1{
+        font-size:  38px;
+    }
+
+    h2{
+        font-size: 32px;
+    }
+    #top-section{
+        height:530px;
+    }
+    #add-to{
+        margin: 0 auto;
+        display: table;
+    }
+    .blue,.white{
+        height:458px;
+    }
+    #top-section .description, #top-section .phone,.white .description, .white .phone,.blue .description, .blue .phone{
+        margin-top: 50px;
+    }
+    #top-section .phone img, .white .phone img,.blue .phone img{
+        margin: 0px auto;
+        display: table;
+        width: 273px;
+    }
+    #top-section .description #logo{
+        width: 210px;
+    }
+    
+    
+}
+
+/* medias mobile*/
+@media only screen and (max-width: 425px){
+    h1{
+        font-size:  30px;
+        text-align: center;
+    }
+
+    h2{
+        font-size: 25px;
+        text-align: center;
+    }
+    #top-section .description img{
+        margin: 0 auto;
+        display: table;
+    }
+    .blue .description img,.white .description img{
+        margin: 0 auto;
+        display: table;
+    }
+    #top-section{
+        height:909px;
+    }
+    .blue,.white{
+        height:674px;
+    }
+    #top-section .description, #top-section .phone,.white .description, .white .phone,.blue .description, .blue .phone{
+        margin-top: 30px;
+    }
+    #top-section .phone img, .white .phone img,.blue .phone img{
+        margin: 0px auto;
+        display: table;
+        width: 273px;
+    }
+    #top-section .description #logo{
+        width: 210px;
+    } 
+}
+
